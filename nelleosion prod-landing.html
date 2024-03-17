@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style2.css">
+        <link rel="" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>product page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="loadProductPage()">
+        <div class="header">
+            <div class="top_page no-focus" >
+                <div class="left_header header_logo">
+                    <h1 class="logo" id="logo" style="display: block;  ">Nelloesion store</h1>
+                </div>
+                <div class="right_header">
+                    <input type="text" placeholder="Search..." id="searchbar" onkeyup="filterFunction()"/>
+                    <button  onclick="search()" type="submit" class="search-btn">Search</button>
+                </div>
+                <div class="let-it-logo">
+                    <img src="https://static.wixstatic.com/media/11d3d8_c82e9f02db6a4c1f94dec487cb80c359~mv2.png/v1/crop/x_0,y_169,w_800,h_318/fill/w_350,h_139,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/pit%20in%202.png" alt="pit in 2.png" style=" height: 100%; width: 100%;" srcset="https://static.wixstatic.com/media/11d3d8_c82e9f02db6a4c1f94dec487cb80c359~mv2.png/v1/crop/x_0,y_169,w_800,h_318/fill/w_350,h_139,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/pit%20in%202.png" fetchpriority="high">
+                </div>
+            </div>
+        </div>
+        <div class="product-page">
+            <div >
+                <div  class="product-info">
+                    <ul class="product-img-list">
+                        <li class="main-product-img">
+                            <img src="" alt="" height="450px" width="80%" class="main-img" id="main-img"><br>
+                        </li>
+                        <li class="sub-product-img-list">
+                            <button class="sub-product-img-btn" id="front-img-j" onclick="FrontImages(event)"><img class="sub-product-img-front" src="" alt="" id="front-img"/></button>
+                            <button class="sub-product-img-btn" id="back-img-j" onclick="BackImages(event)"><img class="sub-product-img-back" src="" alt="" id="back-img" /></button>
+                        </li>
+                    </ul> 
+                    
+                    <ul class="product-des">
+                        <li>
+                            <p class="product-name" id="product-name"></p>
+                            <h3 class="cost" id="cost"></h3>
+                            <button class="buy-btn" onclick="showModal()">BUY PRODUCT</button>
+                            <dialog id="purchaseModal" class="modal" style="padding: 0px; border: none; box-shadow: inset 0 0 10px rgba(72, 104, 144, .5), 0 0 10px rgba(72, 104, 144, .5);">
+                                <form style="padding: 10px; width: 300px; height: 200px; background-color: aquamarine" enctype="text/plain" action="send_email.php">
+                                    <input type="hidden" name="productInfo" value='<?php echo htmlspecialchars(json_encode($productInfo)); ?>'>
+                                    <p style="text-align: center; color:orange; font-weight: bold;">Please enter your contact info</p>
+                                  <label for="name" style="color: orange;">Name:</label><br>
+                                  <input style="border: none; box-shadow: inset 0 0 10px rgba(72, 104, 144, .5), 0 0 10px rgba(72, 104, 144, .5); padding: 5px; margin-bottom: 20px;" type="text" id="name" name="name" required><br>
+                                  <label style="color: orange;" for="phone">Phone Number:</label><br>
+                                  <input type="tel" id="phone" name="phone" style="border: none; box-shadow: inset 0 0 10px rgba(72, 104, 144, .5), 0 0 10px rgba(72, 104, 144, .5); padding: 5px;" pattern="[0-9]{10}" required><br>
+                                  <button type="submit" class="submit-btn">Submit</button>
+                                  <button type="reset" class="submit-btn">Reset</button>
+                                </form>
+                              </dialog>
+                            <p class="des">Add to wishlist</p>
+                            <p style="color:aliceblue; font-size: bold; font-weight: bold; text-align: center;">social media plateforms for store</p>
+                            <a href="https://www.tiktok.com/@nelloesian" target="_blank"><button class="social-btn fab fa-tiktok">Tiktok</button></a>
+                            <h2 style="color:aliceblue; text-align: center;">OR</h2>
+                            <a href="https://www.instagram.com/nelloesian/" target="_blank"><button class="social-btn2 insta-icon">Instagram</button></a>
+                            
+                        </li>
+                    </ul>
+                   
+                    
+                    <script>
+                        var myImage =document.querySelector(".main-img");
+
+                        function FrontImages() {
+                            const productInfo = JSON.parse(localStorage.getItem("productInfo"));
+                           myImage.src = productInfo.image
+                          }
+
+                          function BackImages() {
+                            const productInfo = JSON.parse(localStorage.getItem("productInfo"));
+                           myImage.src= productInfo.imageHover;
+                          }
+
+                          function showModal() {
+                            alert("Sorry, the 'BUY PRODUCT' button is not working at the moment, Please contact us at our social media page.");
+  // document.querySelector("#purchaseModal").showModal(); // uncomment this line if you want to show the modal as well
+}
+
+ 
+  
+  function loadProductPage() {
+      // Retrieve the product information from local storage
+      const productInfo = JSON.parse(localStorage.getItem("productInfo"));
+
+      // Display the product information on the page
+      document.getElementById("main-img").src = productInfo.image;
+      document.getElementById("product-name").innerText = productInfo.name;
+      document.getElementById("cost").innerText = "$JA " + productInfo.price.toFixed(2)*1000;
+      document.getElementById("front-img").src = productInfo.image;
+      document.getElementById("back-img").src =productInfo.imageHover;
+    }
+
+
+    
+                    </script>
+                </div>
+            </div>
+        </div>
+                   
+    </body>
+</html>

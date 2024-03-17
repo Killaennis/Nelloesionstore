@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta  charset="utf-8" />
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css"/>
+        <title>Nelloesion store prt</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="top_page no-focus" >
+                <div class="left_header header_logo">
+                    <h1 class="logo" id="logo" style="display: block; text-shadow: blue 2px 2px; ">Nelloesion store</h1>
+                </div>
+                <div class="right_header">
+                    <input type="text" placeholder="Search..." id="searchbar" onkeyup="filterFunction()"/>
+                    <button  onclick="search()" type="submit" id="searchbutton" class="search-btn">Search</button>
+                
+                </div>
+                <div class="let-it-logo">
+                    <img src="https://static.wixstatic.com/media/11d3d8_c82e9f02db6a4c1f94dec487cb80c359~mv2.png/v1/crop/x_0,y_169,w_800,h_318/fill/w_350,h_139,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/pit%20in%202.png" alt="pit in 2.png" style=" height: 100%; width: 100%;" srcset="https://static.wixstatic.com/media/11d3d8_c82e9f02db6a4c1f94dec487cb80c359~mv2.png/v1/crop/x_0,y_169,w_800,h_318/fill/w_350,h_139,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/pit%20in%202.png" fetchpriority="high">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="product-page">
+                
+                    <h2 class="heading">Products</h2>
+            <main   >
+                <ul class="product-list" id="productlist">
+                    <script>
+          const filterFunction = () => {
+            const inputValue = document.getElementById('searchbar').value.toLowerCase();
+            const productBoxes = document.getElementsByClassName('product-box')
+
+            for (let i = 0; i < productBoxes.length; i++) {
+              const productName = productBoxes[i].getElementsByClassName('product-name')[0].innerText.toLowerCase();
+
+              if (productName.includes(inputValue))
+                productBoxes[i].style.display = ''
+              else
+                productBoxes[i].style.display = 'none'
+            }
+          } 
+                              
+                        const productListing = document.querySelector('.product-list')
+                        const products = [
+                            {
+                                _id: '1',
+                                name: '(REGULAR) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_1fe792d6588947809415c314241f8d2c~mv2.png/v1/fill/w_447,h_447,al_c,usm_0.66_1.00_0.01/11d3d8_1fe792d6588947809415c314241f8d2c~mv2.png",
+                                price: 2,
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_85eadc96ea5642fbbbcf6de1b5b43bd2~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_85eadc96ea5642fbbbcf6de1b5b43bd2~mv2.png",
+                            },
+                            {
+                                _id: '2',
+                                name: '(REGULAR) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirt',
+                                image: src="https://static.wixstatic.com/media/11d3d8_4e29b402ac964463922aa074fa7efc31~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_4e29b402ac964463922aa074fa7efc31~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_4428f0b66e5d412597ae2ea63edcd9d5~mv2.png/v1/fill/w_447,h_447,al_c,usm_0.66_1.00_0.01/11d3d8_4428f0b66e5d412597ae2ea63edcd9d5~mv2.png",
+                            },
+                            {
+                                _id: '3',
+                                name: '(REGULAR) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_7ef3e7d8278341cdb221064201c4994b~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_7ef3e7d8278341cdb221064201c4994b~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_cf9f4ff762054b6dba5680885203b30a~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_cf9f4ff762054b6dba5680885203b30a~mv2.png",
+                            },
+                            {
+                                _id: '4',
+                                name: '(CALM BLUE) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_4241e39c81464c5f9d5e8bb647c5bb06~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_4241e39c81464c5f9d5e8bb647c5bb06~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_4113857f45e3402ca0cb37607b60f091~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_4113857f45e3402ca0cb37607b60f091~mv2.png",
+                                
+                            },
+                            {
+                                _id: '5',
+                                name: '(EXOTICA WHITE) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_9172f3067cbd413cb402ddcbbd446bba~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_9172f3067cbd413cb402ddcbbd446bba~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_8313aa007b1148058fffc0d154c67d52~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_8313aa007b1148058fffc0d154c67d52~mv2.png",
+                                
+                            },
+                            {
+                                _id: '6',
+                                name: '(JETBLACK) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_016d26a273124bcea869e40aadbde84f~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_016d26a273124bcea869e40aadbde84f~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_ad5a2993dd7745bc903f3252406f6be4~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_ad5a2993dd7745bc903f3252406f6be4~mv2.png",
+                            },
+                            {
+                                _id: '7',
+                                name: '(EXOTICA WHITE) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_c4c8aad9ab2a481bbefa234fb7427881~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_c4c8aad9ab2a481bbefa234fb7427881~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_24981d03acd940df913955747f1ec46b~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_24981d03acd940df913955747f1ec46b~mv2.png",
+            
+                            },
+                            {
+                                _id: '8',
+                                name: '(JETBLACK) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_a800fe1a3a9340438c1531213e94ec51~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_a800fe1a3a9340438c1531213e94ec51~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_d9a0183714b447a29179d7071c7fee32~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_d9a0183714b447a29179d7071c7fee32~mv2.png",
+                            },
+                            {
+                                _id: '9',
+                                name: '(JETBLACK) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_50c9fcc8dabb479d9824a64606f4a919~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_50c9fcc8dabb479d9824a64606f4a919~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_d02d307a37ff4f959b9d9733c51ec8cf~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_d02d307a37ff4f959b9d9733c51ec8cf~mv2.png",
+                            },
+                            {
+                                _id: '10',
+                                name: '(JETBLACK) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_9fcb9b2dd81749319d0dec540ad71871~mv2.png/v1/fill/w_447,h_447,al_c,usm_0.66_1.00_0.01/11d3d8_9fcb9b2dd81749319d0dec540ad71871~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_d02d307a37ff4f959b9d9733c51ec8cf~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_d02d307a37ff4f959b9d9733c51ec8cf~mv2.png",
+                            },
+                            {
+                                _id: '11',
+                                name: '(JETBLACK) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_a126b96344ea42a18fee23d042db0570~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_a126b96344ea42a18fee23d042db0570~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_1ff2ac481f3d453188b7f5fd860049ce~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_1ff2ac481f3d453188b7f5fd860049ce~mv2.png",
+                            },
+                            {
+                                _id: '12',
+                                name: '(JETBLACK) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_7a35c06af0e64a7d90574a97dec6775b~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_7a35c06af0e64a7d90574a97dec6775b~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_9b1dee41968f49a6a881346d9acae081~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_9b1dee41968f49a6a881346d9acae081~mv2.png",
+                            },
+                            {
+                                _id: '13',
+                                name: '(EXOTICA WHITE) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_eb0e5ec60f0a468e8835f43b92afaaa1~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_eb0e5ec60f0a468e8835f43b92afaaa1~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_69271629cc1542d488f0acbc191b50a6~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_69271629cc1542d488f0acbc191b50a6~mv2.png", 
+                            },
+                            {
+                                _id: '14',
+                                name: '(EXOTICA WHITE) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_9e9558f255d749b0a8075ebea34efcda~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_9e9558f255d749b0a8075ebea34efcda~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_2cff8ecb58cb4e5c9851aca7815a94db~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_2cff8ecb58cb4e5c9851aca7815a94db~mv2.png",
+                            },
+                            {
+                                _id: '15',
+                                name: '(REGULAR) Nelloesian Heavyweight T-shirt',
+                                category: 'Shirts',
+                                image: src="https://static.wixstatic.com/media/11d3d8_35c469951b014a48bcc39a83634563c9~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_35c469951b014a48bcc39a83634563c9~mv2.png",
+                                price: 2,
+                                brand: 'Nelloesian',
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_4c659d9f2166418cb30201f8aaaf5b92~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_4c659d9f2166418cb30201f8aaaf5b92~mv2.png", 
+                            },
+                            {
+                                _id:  '16',
+                                name: 'Nelloesion "UNDERSTAND" HeavyWeight Hoodie',
+                                category: "Hoodie",
+                                brand:  'Nelloesian',
+                                price: 5,
+                                image: src="https://static.wixstatic.com/media/11d3d8_9d61832b8273483bbda1110059874c6a~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_9d61832b8273483bbda1110059874c6a~mv2.png",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_300f6896b5a34295b731a2e8713fe066~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_300f6896b5a34295b731a2e8713fe066~mv2.png",
+                            },
+                            {
+                                _id: '17',
+                                name: 'Nelloesion "444" HeavyWeight Hoodie',
+                                category: 'Hoodie',
+                                price: 5,
+                                brand:  'Nelloesian',
+                                image: src="https://static.wixstatic.com/media/11d3d8_8bc2fe3f546c4be79e73c9385240987c~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_8bc2fe3f546c4be79e73c9385240987c~mv2.png",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_e9514af402924d1983219c9143a78e7d~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_e9514af402924d1983219c9143a78e7d~mv2.png",
+                            },
+                            {
+                                _id: '18',
+                                name: 'Nelloesion "ONE LIFE" HeavyWeight Hoodie',
+                                category: 'Hoodie',
+                                brand:  'Nelloesian',
+                                price: 5,
+                                image: src="https://static.wixstatic.com/media/11d3d8_38e4e6d9132b4073824bde888e75bf75~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_38e4e6d9132b4073824bde888e75bf75~mv2.png",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_2b0bef11a698458ca18f1b8fca51dcb7~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_2b0bef11a698458ca18f1b8fca51dcb7~mv2.png",
+                            },
+                            {
+                                _id: '19',
+                                name:'(REGULAR) Nelloesion HeavyWeight T-shirt',
+                                category:"Shirts",
+                                brand:  'Nelloesion',
+                                price: 2,
+                                image: src="https://static.wixstatic.com/media/11d3d8_7f453752bb6c4399a3f182c9a695b85e~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_7f453752bb6c4399a3f182c9a695b85e~mv2.png",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_24db6a9f4e444bce9e4fe90d760f45d5~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_24db6a9f4e444bce9e4fe90d760f45d5~mv2.png",
+                            },
+                            {
+                                _id:  '20',
+                                name: '(BID DESIGN) Nelloesion HeavyWeight T-shirt',
+                                category: 'Shirts',
+                                price:  2,
+                                brand: 'Nelloesion',
+                                price: 2,
+                                image: src="https://static.wixstatic.com/media/11d3d8_82d85dd9821b4c26ac9959e5f9815f82~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_82d85dd9821b4c26ac9959e5f9815f82~mv2.png",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_a0a84449162c452faa053c29a946e1ac~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_a0a84449162c452faa053c29a946e1ac~mv2.png",
+                            },
+                            {
+                                _id:    '21',
+                                name: '(CRISMON RED) Nelloesion "ONE LIFE" Backpack',
+                                category: 'Backpack',
+                                brand:   'Nelloesion',
+                                price: 8.5,
+                                image: src="https://static.wixstatic.com/media/11d3d8_2bbc3a6befe74b8b9a6f962d961aabfc~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_2bbc3a6befe74b8b9a6f962d961aabfc~mv2.jpg",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_06d881cf6ff44ba0a9ea40a903b8db61~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_06d881cf6ff44ba0a9ea40a903b8db61~mv2.jpg",
+                            },
+                            {
+                                _id:     '22',
+                                name: '(4:44) Nelloesian "ONE LIFE" Backpack',
+                                category: 'Backpack',
+                                brand: 'Nelloesion',
+                                price: 8.5,
+                                image: src="https://static.wixstatic.com/media/11d3d8_5db836fb7cc34afa8ec56c3a87ad5d64~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_5db836fb7cc34afa8ec56c3a87ad5d64~mv2.jpg",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_8ebed338d72f481d8dd1501907d2dcbf~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_8ebed338d72f481d8dd1501907d2dcbf~mv2.jpg",
+                            },
+                            {
+                                _id:       '23',
+                                name: '(EXOTICA WHITE) Nelloesion " ONE LIFE" Backpack',
+                                category: 'Backpack',
+                                brand: 'Nelloesion',
+                                price: 8.5,
+                                image: src="https://static.wixstatic.com/media/11d3d8_da55f4a19ab747959432e636b085bac7~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_da55f4a19ab747959432e636b085bac7~mv2.jpg",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_da55f4a19ab747959432e636b085bac7~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_da55f4a19ab747959432e636b085bac7~mv2.jpg",
+                            },
+                            {
+                                _id:        '24',
+                                name: '(X6M) Nelloesion HeavyWeight T-shirt',
+                                category: 'Shirts',
+                                brand: 'Nelloesion',
+                                price: 2,
+                                image: src="https://static.wixstatic.com/media/11d3d8_86e30736d6c247b2b11944951a04a7f6~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_86e30736d6c247b2b11944951a04a7f6~mv2.png",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_66fb74bf69bf47a5a4df7dfd9e2e670b~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_66fb74bf69bf47a5a4df7dfd9e2e670b~mv2.png",
+                            },
+                            {
+                                _id:      '25',
+                                name: '(BLACK) Nelloesion  "ONE LIFE" Backpack',
+                                category: 'Backpack',
+                                brand: 'Nelloesion',
+                                price: 8.5,
+                                image: src="https://static.wixstatic.com/media/11d3d8_1259304673c447ee90c9d287c6064c77~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_1259304673c447ee90c9d287c6064c77~mv2.jpg",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_4dbca0f2d4d84c249de0da4e904aa7d3~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_4dbca0f2d4d84c249de0da4e904aa7d3~mv2.jpg",
+                            },
+                            {
+                            _id:      '25',
+                                name: '(BLACK) Nelloesion  "ONE LIFE" Backpack',
+                                category: 'Backpack',
+                                brand: 'Nelloesion',
+                                price: 8.5,
+                                image: src="https://static.wixstatic.com/media/11d3d8_2e9dc822e8934680aa214dcbdc7f8830~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_2e9dc822e8934680aa214dcbdc7f8830~mv2.jpg",
+                                imageHover: src="https://static.wixstatic.com/media/11d3d8_6908d03d01c64cfca29aba41a1cd9fb2~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_6908d03d01c64cfca29aba41a1cd9fb2~mv2.jpg",
+                            },
+                            
+                        ];
+                        
+                        const displayProducts = () => {
+  products.forEach(product => {
+    const productBox = document.createElement('li')
+    productBox.classList.add('product-box')
+
+    const productCard = document.createElement('a')
+    productCard.classList.add('product-card')
+    productCard.onclick = () =>{
+      window.location.href = 'nelleosion prod-landing.html'
+      localStorage.setItem('productInfo', JSON.stringify(product));
+     
+    }
+
+    const productImage = document.createElement('img')
+    productImage.classList.add('product-img')
+    productImage.src = product.image
+    productImage.alt = product.name
+    productCard.appendChild(productImage)
+
+    const productInfo = document.createElement('div')
+    productInfo.classList.add('product-name')
+
+    const productName = document.createElement('div')
+    productName.classList.add('product-name')
+    productName.innerText = product.name
+    productInfo.appendChild(productName)
+
+    const productPrice = document.createElement('p')
+    productPrice.classList.add('cost')
+    productPrice.innerText = (`Price: $JA ${product.price*1000}`)
+    productInfo.appendChild(productPrice)
+
+    productCard.appendChild(productInfo)
+    productBox.appendChild(productCard)
+    productImage.addEventListener('mouseover', () => {
+            productImage.src = product.imageHover;
+          });
+    
+          productImage.addEventListener('mouseout', () => {
+            productImage.src = product.image;
+          });
+    productListing.appendChild(productBox) 
+  })
+};
+
+displayProducts();
+
+
+
+
+                                        </script>
+              
+                </ul>
+                       </div>            
+            </main>            
+                </div>
+            </div>
+    </body>
+</html>

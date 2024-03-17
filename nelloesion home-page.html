@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0"  name="viewport" />
+    <title>NELLOEISAN HOME PAGE</title>
+    
+	<!-- start: Css -->
+	<link rel="stylesheet" type="text/css" href="home page.css" />
+    </head>
+    <body>
+      <!-- start: Header -->
+        <header class="header">
+          <div class="logo">NELLOESIAN</div>
+          <div class="let-it-logo">
+            <img src="https://static.wixstatic.com/media/11d3d8_c82e9f02db6a4c1f94dec487cb80c359~mv2.png/v1/crop/x_0,y_169,w_800,h_318/fill/w_350,h_139,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/pit%20in%202.png" alt="pit in 2.png" style=" height: 100%; width: 100%; object-fit: cover;" srcset="https://static.wixstatic.com/media/11d3d8_c82e9f02db6a4c1f94dec487cb80c359~mv2.png/v1/crop/x_0,y_169,w_800,h_318/fill/w_350,h_139,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/pit%20in%202.png" fetchpriority="high">
+        </div>
+        <button id="menuBtn" class="menu-btn">MENU</button>
+          <nav>
+            <ul class="menu">
+              <li ><a href="nelloesion home-page.html" class="nav-list" >HOME</a></li>
+              <li ><a href="nellesion prt 3.html" class="nav-list">SHOP</a></li>
+            </ul>
+          </nav>
+        
+            
+         
+        </header>
+        <main>
+          
+            <img src="products-imgs/homepagebg.jpg" alt="" class="nell-img">
+         <div class="product-list-bg">
+          <h3 class="heading">TOP PRODUCTS</h3>
+          <div class="product-listing">
+            
+            <script>
+              const productListing = document.querySelector('.product-listing')
+              const products  = [
+                {
+                  _id: '1',
+                  name: '(REGULAR) Nelloesian Heavyweight T-shirt',
+                  category: 'Shirts',
+                  image: src="https://static.wixstatic.com/media/11d3d8_1fe792d6588947809415c314241f8d2c~mv2.png/v1/fill/w_447,h_447,al_c,usm_0.66_1.00_0.01/11d3d8_1fe792d6588947809415c314241f8d2c~mv2.png",
+                  price: 2,
+                  imageHover: src="https://static.wixstatic.com/media/11d3d8_85eadc96ea5642fbbbcf6de1b5b43bd2~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_85eadc96ea5642fbbbcf6de1b5b43bd2~mv2.png",         
+                },
+                {
+                  _id: '8',
+                  name: '(JETBLACK) Nelloesian Heavyweight T-shirt',
+                  category: 'Shirts',
+                 image: src="https://static.wixstatic.com/media/11d3d8_a800fe1a3a9340438c1531213e94ec51~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_a800fe1a3a9340438c1531213e94ec51~mv2.png",
+                 price: 2,
+                 brand: 'Nelloesian',
+                 imageHover: src="https://static.wixstatic.com/media/11d3d8_d9a0183714b447a29179d7071c7fee32~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_d9a0183714b447a29179d7071c7fee32~mv2.png",
+                },
+                {
+                  _id:  '16',
+                  name: 'Nelloesion "UNDERSTAND" HeavyWeight Hoodie',
+                  category: "Hoodie",
+                  brand:  'Nelloesian',
+                  price: 5,
+                  image: src="https://static.wixstatic.com/media/11d3d8_9d61832b8273483bbda1110059874c6a~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_9d61832b8273483bbda1110059874c6a~mv2.png",
+                  imageHover: src="https://static.wixstatic.com/media/11d3d8_300f6896b5a34295b731a2e8713fe066~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11d3d8_300f6896b5a34295b731a2e8713fe066~mv2.png",
+                },
+                {
+                  _id:    '21',
+                  name: '(CRISMON RED) Nelloesion "ONE LIFE" Backpack',
+                  category: 'Backpack',
+                  brand:   'Nelloesion',
+                  price: 8.5,
+                  image: src="https://static.wixstatic.com/media/11d3d8_2bbc3a6befe74b8b9a6f962d961aabfc~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_2bbc3a6befe74b8b9a6f962d961aabfc~mv2.jpg",
+                  imageHover: src="https://static.wixstatic.com/media/11d3d8_06d881cf6ff44ba0a9ea40a903b8db61~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11d3d8_06d881cf6ff44ba0a9ea40a903b8db61~mv2.jpg",
+                }
+              ]
+
+              const displayProducts = () => {
+  products.forEach(product => {
+    const productBox = document.createElement('li')
+    productBox.classList.add('product-box')
+
+    const productCard = document.createElement('a')
+    productCard.classList.add('product-card')
+    productCard.onclick = () =>{
+      window.location.href = 'nelleosion prod-landing.html'
+      localStorage.setItem('productInfo', JSON.stringify(product));
+     
+    }
+
+    const productImage = document.createElement('img')
+    productImage.classList.add('product-img')
+    productImage.src = product.image
+    productImage.alt = product.name
+    productCard.appendChild(productImage)
+
+    const productInfo = document.createElement('div')
+    productInfo.classList.add('product-name')
+
+    const productName = document.createElement('div')
+    productName.classList.add('product-name')
+    productName.innerText = product.name
+    productInfo.appendChild(productName)
+
+    const productPrice = document.createElement('p')
+    productPrice.classList.add('cost')
+    productPrice.innerText = (`Price: $JA ${product.price*1000}`)
+    productInfo.appendChild(productPrice)
+
+    productCard.appendChild(productInfo)
+    productBox.appendChild(productCard)
+    productImage.addEventListener('mouseover', () => {
+            productImage.src = product.imageHover;
+          });
+    
+          productImage.addEventListener('mouseout', () => {
+            productImage.src = product.image;
+          });
+    productListing.appendChild(productBox) 
+  })
+};
+
+displayProducts();
+
+const menuBtn = document.querySelector('#menuBtn');
+const menu = document.querySelector('.menu');
+
+menuBtn.addEventListener('click', () => {
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    menu.classList.toggle('active');
+  }else{
+      menu.classList.add('active');
+    }
+});
+            </script>
+          </div>
+         </div>
+          
+        </main>
+        <footer class="footer">
+
+        </footer>
+    </body>
+</html>

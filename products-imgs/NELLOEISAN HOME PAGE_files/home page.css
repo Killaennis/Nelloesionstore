@@ -1,0 +1,279 @@
+body {
+    margin: 0px;
+    padding:  0px;
+    
+}
+
+.header {
+    background-color: rgb(77, 76, 76);
+    height:200px;
+    text-align:center;
+    font-size:24px;
+    line-height:50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+
+}
+
+.logo {
+    padding-left: 20px;
+    padding-top: 50px;
+    font-size: 3rem;
+    font-style: italic;
+    color: white;
+    text-shadow: #ecb90fe7 2px 2px, #0b69f5ab -2px -2px;
+}
+
+.let-it-logo {
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    padding-left: 40px;
+}
+
+main {
+    width:100;
+    background-color: rgb(24, 24, 24);
+    
+}
+
+.product-list-bg {
+    background-image: url(products-imgs/div-pl-bg.jpg) cover;
+    
+    
+}
+
+.nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    margin-top:  8vh;
+    margin-right: 150px;
+}
+
+
+.nav-list {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+}
+
+.nav-list:hover {
+    background-color: rgb(156, 156, 156);
+}
+.nell-img {
+    padding-top: 5px;
+   width:  100%;
+   height: 450px;
+   
+   
+   
+}
+
+.product-info {
+    width: 100%;
+    height: 500px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.product-card {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    box-sizing: border-box;
+    background:transparent;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    
+}
+
+.product-box:hover {
+    opacity: 0.8;
+    transition: all .3s ease-in-out;
+    background-image: url(products-imgs/backgroundimg.jpg);
+    color: red;
+    font-weight: bold;
+    cursor: pointer; 
+  }
+
+.product-box {
+    width: auto;
+    height: auto;
+    padding: 5px;
+    font-size: 14px;
+    background-color: beige;
+    margin: 5px;
+    list-style-type: none;
+}
+
+.product-listing { 
+    display: grid;
+    grid-template-columns:  330px 330px 330px 330px;
+    gap: 0px;
+    width: auto;
+    padding: 5px;
+    overflow:auto;
+}
+
+.menu {
+    display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: 50px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+
+@media only screen and (max-width: 767px) { /* Mobile */
+
+.product-listing {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+
+.nell-img {
+    height: 250px;
+    float: left;
+}
+
+.let-it-logo {
+    width: 200px;
+    height: 50px;
+    padding: 1px;
+}
+
+.menu-btn {
+    display: block;
+    background: transparent;
+    color: beige;
+    font-size: 1em;
+    text-align: center;
+    border: 2px solid white;
+    cursor: pointer;
+    height: 50px;
+}
+
+.menu {
+    display: none;
+    margin: 0px;
+}
+
+.menu.active {
+    display : block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.menu.active nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu.active nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu.active nav li {
+    margin-bottom: 10px;
+  }
+
+.menu.active nav a {
+    color: #333;
+    text-decoration: none;
+  }
+
+}
+
+.product-img {
+    width: auto;
+    height:  300px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+}
+
+.product-name {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.cost {
+  opacity: 0.6;
+  padding: 10px;
+}
+
+.heading {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    box-shadow: inset 0 0 0 2px white;
+    padding: 10px;
+    width: 97%;
+}
+
+.footer {
+    width:100%;
+    height: 200px;
+    background-color: rgb(77, 76, 76);
+}
+
+@media screen and (max-width: 767px) {
+
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+    }
+    .logo {
+        margin: auto;
+        text-align: center;
+        padding: 5px;
+    }
+    .nav {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: translate(-30%, -30%);
+        z-index: 999;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .let-it-logo {
+      object-fit: cover;
+    }
+}
